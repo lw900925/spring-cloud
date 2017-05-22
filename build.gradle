@@ -1,0 +1,54 @@
+allprojects {
+    group = 'org.matrixstudio.springcloud'
+    version = '0.0.1-SNAPSHOT'
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.3.RELEASE'
+    }
+    
+    repositories {
+        mavenLocal()
+        maven { 
+            url 'http://maven.aliyun.com/nexus/content/groups/public'
+        }
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+// 所有子项目通用配置
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    
+    sourceCompatibility = 1.8
+    
+    repositories {
+        mavenLocal()
+        maven { 
+            url 'http://maven.aliyun.com/nexus/content/groups/public'
+        }
+        mavenCentral()
+    }
+    
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    
+    ext {
+        springCloudVersion = 'Dalston.RELEASE'
+    }
+    
+    dependencies {
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+    
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+}

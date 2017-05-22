@@ -1,0 +1,4 @@
+include 'springcloud-eureka'
+include 'springcloud-dashboard'
+include 'springcloud-zuul'
+include 'springcloud-config-server'
