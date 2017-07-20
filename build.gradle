@@ -25,6 +25,7 @@ buildscript {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
+    apply plugin: 'base'
     
     sourceCompatibility = 1.8
     
@@ -49,6 +50,21 @@ subprojects {
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    // Delete IntelliJ IDEA compile destination
+    // This maybe a issue since IntelliJ IDEA 2017.2 version
+    // IDEA will generate out folder as compile destination when you run with IDEA
+    // Hope they fix it in a future point release
+    // 这可能是个Bug，只有IDEA 2017.2以上版本才会出现
+    // 当使用IDEA运行项目的时候，会在项目目录下面生成一个out目录存放编译后的class文件
+    // 祈祷在后续版本中修复它吧
+    clean << {
+        String[] compileDirs = ["${rootDir}/out/", "${projectDir}/out/"]
+        for (String compileDir in compileDirs) {
+            file(compileDir).deleteDir()
+            println(compileDir)
         }
     }
 }
