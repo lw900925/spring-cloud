@@ -35,7 +35,9 @@ java -jar springcloud-zuul/build/libs/springcloud-zuul-0.0.1-SNAPSHOT.jar
 
 - Eureka：`http://localhost:8080/`
 - Dashboard：`http://localhost:8081/`
-- Config Server：`http://localhost:8083/`
 - Zuul：`http://localhost:8082/`
+- Config Server：`http://localhost:8083/`
+- OAuth2 Server：`http://localhost:8084/`
+
     
     
