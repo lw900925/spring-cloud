@@ -60,7 +60,7 @@ subprojects {
     // 这可能是个Bug，只有IDEA 2017.2以上版本才会出现
     // 当使用IDEA运行项目的时候，会在项目目录下面生成一个out目录存放编译后的class文件
     // 祈祷在后续版本中修复它吧
-    clean << {
+    clean.doLast {
         String[] compileDirs = ["${rootDir}/out/", "${projectDir}/out/"]
         for (String compileDir in compileDirs) {
             file(compileDir).deleteDir()

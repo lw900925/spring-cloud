@@ -1,1 +1,5 @@
+// Spring cloud
 include("springcloud-config-server")
+
+// Microservice instance
+include("springcloud-file-service")
