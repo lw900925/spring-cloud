@@ -2,6 +2,7 @@
 include("springcloud-config-server")
 include("springcloud-eureka")
 include("springcloud-zuul")
+include("springcloud-admin-dashboard")
 
 // Microservice instance
 include("springcloud-file-service")

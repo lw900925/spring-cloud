@@ -12,6 +12,6 @@ public class FileController {
 
     @GetMapping("/{id}")
     public ResponseEntity<String> get(@PathVariable String id) {
-        return ResponseEntity.ok("Hit file [id=" + id + "].");
+        return ResponseEntity.ok("Hit file[id=" + id + "]");
     }
 }
