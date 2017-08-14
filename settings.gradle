@@ -1,6 +1,7 @@
 // Spring cloud
 include("springcloud-config-server")
 include("springcloud-eureka")
+include("springcloud-zuul")
 
 // Microservice instance
 include("springcloud-file-service")
