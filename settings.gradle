@@ -4,3 +4,4 @@ include("springcloud-eureka")
 
 // Microservice instance
 include("springcloud-file-service")
+include("springcloud-object-storage-service")
