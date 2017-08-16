@@ -29,7 +29,7 @@ gradlew.bat clean build -x test
 java -jar -Dspring.profiles.active=dev springcloud-eureka-0.0.1-SNAPSHOT.jar
 ```
 
-启动顺序以此为：
+启动依次以此为：
 
 - springcloud-eureka
 - springcloud-config-server
