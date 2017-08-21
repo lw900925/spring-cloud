@@ -3,7 +3,7 @@
 本项目是Spring Cloud的示例项目，采用Gradle工具构建，请搭配博客中的教程食用。
 
 - [Spring Cloud 微服务：Spring Cloud Config](https://lw900925.github.io/spring-cloud/spring-cloud-config.html)
-- Spring Cloud 微服务：Spring Cloud Eureka（未完成）
+- [Spring Cloud 微服务：Spring Cloud Eureka](https://lw900925.github.io/spring-cloud/spring-cloud-eureka.html)
 
 ## 如何运行
 
