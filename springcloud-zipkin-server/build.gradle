@@ -1,0 +1,11 @@
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+
+    compile('io.zipkin.java:zipkin:1.30.3')
+    compile('io.zipkin.java:zipkin-server:1.30.3')
+    compile('io.zipkin.java:zipkin-autoconfigure-ui:1.30.3')
+}
