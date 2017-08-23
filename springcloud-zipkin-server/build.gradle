@@ -5,7 +5,13 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-sleuth-zipkin-stream')
     compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 
+    compile('org.springframework.boot:spring-boot-starter-jdbc')
+
+    compile('mysql:mysql-connector-java:5.1.32')
+
     compile('io.zipkin.java:zipkin:1.30.3')
     compile('io.zipkin.java:zipkin-server:1.30.3')
     compile('io.zipkin.java:zipkin-autoconfigure-ui:1.30.3')
+    compile('io.zipkin.java:zipkin-storage-mysql:1.30.3')
+    compile('io.zipkin.java:zipkin-autoconfigure-storage-mysql:1.30.3')
 }
