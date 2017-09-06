@@ -39,7 +39,7 @@ subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
     
     ext {
-        springCloudVersion = 'Dalston.RELEASE'
+        springCloudVersion = 'Dalston.SR3'
     }
     
     dependencies {
