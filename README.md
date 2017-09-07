@@ -36,4 +36,5 @@ java -jar -Dspring.profiles.active=dev springcloud-eureka-0.0.1-SNAPSHOT.jar
 - springcloud-file-service
 - springcloud-object-storage-service
 - springcloud-zuul
+- springcloud-zipkin-server
 - springcloud-admin-dashboard
