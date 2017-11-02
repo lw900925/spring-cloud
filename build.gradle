@@ -5,7 +5,7 @@ allprojects {
 
 buildscript {
     ext {
-        springBootVersion = '1.5.6.RELEASE'
+        springBootVersion = '1.5.8.RELEASE'
     }
     
     repositories {
@@ -39,7 +39,7 @@ subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
     
     ext {
-        springCloudVersion = 'Dalston.SR3'
+        springCloudVersion = 'Dalston.SR4'
     }
     
     dependencies {
