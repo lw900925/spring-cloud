@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: springcloud-admin-dashboard
+  rabbitmq:
+    host: 192.168.6.36
+    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: /
+  boot:
+    admin:
+      routes:
+        endpoints:
+          - 'env'
+          - 'metrics'
+          - 'dump'
+          - 'jolokia'
+          - 'info'
+          - 'configprops'
+          - 'trace'
+          - 'logfile'
+          - 'refresh'
+          - 'flyway'
+          - 'liquibase'
+          - 'heapdump'
+          - 'loggers'
+          - 'auditevents'
+          - 'hystrix.stream'
+
+server:
+  port: 8081
+
+management:
+  security:
+    enabled: false
+
+security:
+  user:
+    name: spring
+    password: 123456
+  ignored:
+    - '/login.html'
+    - '/**/*.css'
+    - '/img/**'
+    - '/third-party/**'
+
+# Spring cloud eureka discovery
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file: ${user.home}/spring-cloud-logs/${spring.application.name}-${server.port}.log

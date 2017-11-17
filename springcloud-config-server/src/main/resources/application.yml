@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: springcloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lw900925/springcloud-config-repository.git
+          search-paths: base-service,spring-cloud
+#           username: username
+#           password: password
+          timeout: 60
+          basedir: ${user.home}/spring-cloud/
+          force-pull: true
+          repos:
+            prod:
+              uri: https://gitlab.com/lw900925/springcloud-config-repository.git
+              pattern:
+                - '*prod*'
+              searchPaths: base-service
+              timeout: 60
+  rabbitmq:
+    host: 192.168.6.36
+    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: /
+
+server:
+  port: 8888
+
+security:
+  user:
+    name: user
+    password: password
+  ignored: /monitor
+
+encrypt:
+  key-store:
+    location: classpath:.keystore
+    alias: spring-cloud-config-server
+    password: 123456
+    secret: 123456
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      user:
+        name: user
+        password: password
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file: ${user.home}/spring-cloud-logs/${spring.application.name}-${server.port}.log
+
+
+

@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: springcloud-object-storage-service
+  rabbitmq:
+    host: 192.168.6.36
+    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: /
+#  zipkin:
+#    locator:
+#      discovery:
+#        enabled: true
+#    service:
+#      name: springcloud-zipkin-server
+
+server:
+  port: 8001
+
+management:
+  security:
+    enabled: false
+
+# Spring cloud eureka discovery
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# Spring logging
+logging:
+  file: ${user.home}/spring-cloud-logs/${spring.application.name}-${server.port}.log

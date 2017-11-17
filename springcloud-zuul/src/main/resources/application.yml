@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: springcloud-zuul
+  rabbitmq:
+    host: 192.168.6.36
+    port: 5672
+    username: guest
+    password: 123456
+    virtual-host: /
+
+server:
+  port: 8080
+
+management:
+  security:
+    enabled: false
+
+# Spring cloud eureka discovery
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file: ${user.home}/spring-cloud-logs/${spring.application.name}-${server.port}.log
+
+zuul:
+  routes:
+    file-service:
+      path: /file-service/**
+      serviceId: springcloud-file-service
+    object-storage-service:
+      path: /object-storage-service/**
+      serviceId: springcloud-object-storage-service
+    admin-dashboard:
+      path: /admin-dashboard/**
+      serviceId: springcloud-admin-dashboard
+
+
+
+
+
+
+
+

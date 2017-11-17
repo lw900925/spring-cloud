@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: springcloud-zuul
+  profiles:
+    active: dev
+
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888
+      username: user
+      password: password
+      discovery:
+        enabled: true
+        service-id: springcloud-config-server
