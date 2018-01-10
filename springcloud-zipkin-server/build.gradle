@@ -1,3 +1,7 @@
+ext {
+    zipkinVersion = '2.4.3'
+}
+
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-eureka')
     compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
@@ -9,9 +13,9 @@ dependencies {
 
     compile('mysql:mysql-connector-java:5.1.32')
 
-    compile('io.zipkin.java:zipkin:1.30.3')
-    compile('io.zipkin.java:zipkin-server:1.30.3')
-    compile('io.zipkin.java:zipkin-autoconfigure-ui:1.30.3')
-    compile('io.zipkin.java:zipkin-storage-mysql:1.30.3')
-    compile('io.zipkin.java:zipkin-autoconfigure-storage-mysql:1.30.3')
+    compile("io.zipkin.java:zipkin:${zipkinVersion}")
+    compile("io.zipkin.java:zipkin-server:${zipkinVersion}")
+    compile("io.zipkin.java:zipkin-autoconfigure-ui:${zipkinVersion}")
+    compile("io.zipkin.java:zipkin-storage-mysql:${zipkinVersion}")
+    compile("io.zipkin.java:zipkin-autoconfigure-storage-mysql:${zipkinVersion}")
 }
